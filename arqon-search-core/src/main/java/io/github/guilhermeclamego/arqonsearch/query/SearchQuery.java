@@ -10,4 +10,9 @@ public record SearchQuery(
         List<Sort> sorts,
         Pagination pagination
 ) {
+
+    public SearchQuery {
+        clauses = List.copyOf(clauses);
+        sorts = List.copyOf(sorts);
+    }
 }
