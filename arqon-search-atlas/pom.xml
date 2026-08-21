@@ -19,7 +19,7 @@
 
         <bson.version>5.6.1</bson.version>
         <junit.version>5.10.2</junit.version>
-        <assertj.version>3.25.3</assertj.version>
+        <assertj.version>3.27.7</assertj.version>
     </properties>
 
     <dependencies>
