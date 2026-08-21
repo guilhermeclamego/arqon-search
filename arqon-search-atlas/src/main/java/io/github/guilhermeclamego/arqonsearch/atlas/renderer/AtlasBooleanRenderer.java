@@ -1,6 +1,7 @@
 package io.github.guilhermeclamego.arqonsearch.atlas.renderer;
 
 import io.github.guilhermeclamego.arqonsearch.query.BooleanClause;
+import io.github.guilhermeclamego.arqonsearch.query.BooleanOperator;
 import org.bson.Document;
 
 import java.util.List;
@@ -25,9 +26,18 @@ public final class AtlasBooleanRenderer
         return new Document(
                 "compound",
                 new Document(
-                        clause.operator().name().toLowerCase(),
+                        toAtlasOperator(clause.operator()),
                         clauses
                 )
         );
+    }
+
+    private String toAtlasOperator(BooleanOperator operator) {
+        return switch (operator) {
+            case MUST -> "must";
+            case SHOULD -> "should";
+            case MUST_NOT -> "mustNot";
+            case FILTER -> "filter";
+        };
     }
 }
