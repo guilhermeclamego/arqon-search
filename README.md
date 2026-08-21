@@ -320,4 +320,4 @@ If you find a bug or have an idea for improving the abstraction, feel free to op
 
 ## 📄 License
 
-This project is licensed under the MIT License.
+This project is licensed under the [MIT License](LICENSE).
