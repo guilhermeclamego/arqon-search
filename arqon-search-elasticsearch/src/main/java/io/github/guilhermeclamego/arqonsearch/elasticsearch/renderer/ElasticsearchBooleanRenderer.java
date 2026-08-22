@@ -26,15 +26,10 @@ public final class ElasticsearchBooleanRenderer
 
         return new Query.Builder()
                 .bool(bool -> {
-
                     switch (clause.operator()) {
-
                         case MUST -> bool.must(queries);
-
                         case SHOULD -> bool.should(queries);
-
                         case MUST_NOT -> bool.mustNot(queries);
-
                         case FILTER -> bool.filter(queries);
                     }
 
